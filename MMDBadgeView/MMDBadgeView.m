@@ -11,10 +11,30 @@
 
 @interface MMDBadgeView()
 @property (nonatomic, readonly) CGRect textFrame;
+@property (nonatomic, strong) UIColor *backgroundColorSetting;
+
 +(CGMutablePathRef)newPathForRoundedRectInBounds:(CGRect)rect;
 @end
 
 @implementation MMDBadgeView
+@synthesize backgroundColorSetting;
+
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super initWithCoder:aDecoder])
+    {
+        if (!self.backgroundColor)
+            self.backgroundColorSetting = UIColor.redColor;
+        
+        else 
+        {
+            self.backgroundColorSetting = self.backgroundColor;
+            self.backgroundColor = nil;
+        }
+    }
+    
+    return self;
+}
 
 -(CGRect)textFrame
 {
@@ -27,9 +47,9 @@
 -(void)drawRect:(CGRect)rect
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    [[UIColor redColor] setFill];
-    [[UIColor whiteColor] setStroke];
+
+    [self.backgroundColorSetting setFill];
+    [UIColor.whiteColor setStroke];
     
     float strokeSize = rect.size.height * .1;
     CGContextSetLineWidth(context, strokeSize);
