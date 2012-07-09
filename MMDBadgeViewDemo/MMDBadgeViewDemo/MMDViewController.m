@@ -13,15 +13,18 @@
 @end
 
 @implementation MMDViewController
+@synthesize backgroundColorBadgeView;
 
 - (void)viewDidLoad
 {
+    self.backgroundColorBadgeView.backgroundColor = UIColor.orangeColor;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewDidUnload
 {
+    [self setBackgroundColorBadgeView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

@@ -19,23 +19,6 @@
 @implementation MMDBadgeView
 @synthesize backgroundColorSetting;
 
--(id)initWithCoder:(NSCoder *)aDecoder
-{
-    if (self = [super initWithCoder:aDecoder])
-    {
-        if (!self.backgroundColor)
-            self.backgroundColorSetting = UIColor.redColor;
-        
-        else 
-        {
-            self.backgroundColorSetting = self.backgroundColor;
-            self.backgroundColor = nil;
-        }
-    }
-    
-    return self;
-}
-
 -(CGRect)textFrame
 {
     CGSize textSize = [self.text sizeWithFont:self.font];
@@ -44,11 +27,24 @@
     return textFrame;
 }
 
+-(UIColor *)backgroundColor
+{
+    if (!self.backgroundColorSetting)
+        return UIColor.redColor;
+    
+    return self.backgroundColorSetting;
+}
+
+-(void)setBackgroundColor:(UIColor *)backgroundColor
+{
+    self.backgroundColorSetting = backgroundColor;
+}
+
 -(void)drawRect:(CGRect)rect
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
 
-    [self.backgroundColorSetting setFill];
+    [self.backgroundColor setFill];
     [UIColor.whiteColor setStroke];
     
     float strokeSize = rect.size.height * .1;

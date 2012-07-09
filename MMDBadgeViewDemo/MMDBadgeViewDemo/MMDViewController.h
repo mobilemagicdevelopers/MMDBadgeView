@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MMDBadgeView.h"
 
 @interface MMDViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet MMDBadgeView *backgroundColorBadgeView;
 @end
