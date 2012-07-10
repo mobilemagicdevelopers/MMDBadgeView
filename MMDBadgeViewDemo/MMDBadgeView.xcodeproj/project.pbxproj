@@ -93,10 +93,10 @@
 		E1A0F39E15AB60FA00A81A85 /* MMDBadgeViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				E1A0F3A715AB60FA00A81A85 /* MMDAppDelegate.h */,
-				E1A0F3A815AB60FA00A81A85 /* MMDAppDelegate.m */,
 				E1A0F3AA15AB60FA00A81A85 /* MainStoryboard_iPhone.storyboard */,
 				E1A0F3AD15AB60FA00A81A85 /* MainStoryboard_iPad.storyboard */,
+				E1A0F3A715AB60FA00A81A85 /* MMDAppDelegate.h */,
+				E1A0F3A815AB60FA00A81A85 /* MMDAppDelegate.m */,
 				E1A0F3B015AB60FA00A81A85 /* MMDViewController.h */,
 				E1A0F3B115AB60FA00A81A85 /* MMDViewController.m */,
 				E1A0F39F15AB60FA00A81A85 /* Supporting Files */,
@@ -307,6 +307,7 @@
 				E1A0F3B515AB60FA00A81A85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

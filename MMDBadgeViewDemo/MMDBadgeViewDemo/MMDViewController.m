@@ -9,24 +9,53 @@
 #import "MMDViewController.h"
 
 @interface MMDViewController ()
-
+@property (nonatomic, strong) NSMutableArray *colorArray;
+-(void)cycleBackgroundColor;
 @end
 
 @implementation MMDViewController
 @synthesize backgroundColorBadgeView;
+@synthesize colorArray = _colorArray;
+
+-(NSMutableArray *)colorArray
+{
+    if (!_colorArray)
+    {
+        NSMutableArray *colors = [NSMutableArray arrayWithObjects:
+                                  UIColor.orangeColor,
+                                  UIColor.yellowColor,
+                                  UIColor.greenColor,
+                                  UIColor.blueColor,
+                                  [UIColor colorWithRed:75.0 / 255 green:0 blue:130.0 / 255 alpha:1],
+                                  [UIColor colorWithRed:127.0 / 255 green:0 blue:1 alpha:1],
+                                  nil];
+        
+        _colorArray = colors;
+    }
+    
+    return _colorArray;
+}
 
 - (void)viewDidLoad
 {
-    self.backgroundColorBadgeView.backgroundColor = UIColor.greenColor;
-    [self.backgroundColorBadgeView performSelector:@selector(setBackgroundColor:) withObject:UIColor.orangeColor afterDelay:5];
+    self.backgroundColorBadgeView.backgroundColor = UIColor.redColor;
+    [self cycleBackgroundColor];
     [super viewDidLoad];
+}
+
+- (void)cycleBackgroundColor
+{
+    [self.colorArray addObject:self.backgroundColorBadgeView.backgroundColor];
+    self.backgroundColorBadgeView.backgroundColor = [self.colorArray objectAtIndex:0];
+    [self.colorArray removeObjectAtIndex:0];
+    
+    [self performSelector:@selector(cycleBackgroundColor) withObject:nil afterDelay:1];
 }
 
 - (void)viewDidUnload
 {
     [self setBackgroundColorBadgeView:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
