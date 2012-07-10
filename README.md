@@ -2,6 +2,7 @@ MMDBadgeView
 ============
 
 MMDBadgeView is a quick, easy, and _simple_ subclass of UILabel that looks like iOS style badges.
+![](https://github.com/mobilemagicdevelopers/MMDBadgeView/raw/master/ScreenShot1.png)
 
 Yet Another Badge View?
 -----------------------
