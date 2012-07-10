@@ -38,6 +38,7 @@
 -(void)setBackgroundColor:(UIColor *)backgroundColor
 {
     self.backgroundColorSetting = backgroundColor;
+    [self setNeedsDisplay];
 }
 
 -(void)drawRect:(CGRect)rect

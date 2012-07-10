@@ -17,9 +17,9 @@
 
 - (void)viewDidLoad
 {
-    self.backgroundColorBadgeView.backgroundColor = UIColor.orangeColor;
+    self.backgroundColorBadgeView.backgroundColor = UIColor.greenColor;
+    [self.backgroundColorBadgeView performSelector:@selector(setBackgroundColor:) withObject:UIColor.orangeColor afterDelay:5];
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewDidUnload
