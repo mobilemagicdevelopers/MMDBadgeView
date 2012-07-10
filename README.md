@@ -32,7 +32,7 @@ Future of MMDBadgeView
 ----------------------
 
 * Some programmatic configuration
-** Stroke size
-** Stroke color
+	* Stroke size
+	* Stroke color
 * Some IB configuration
-** Text alignment
+	* Text alignment
